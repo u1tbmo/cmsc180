@@ -1,0 +1,38 @@
+[package]
+name = "minmax_transform"
+authors = ["Euan Jed Tabamo <estabamo1@up.edu.ph>"]
+version = "0.3.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.5.57", features = ["derive"] }
+colored = "3.1.1"
+core_affinity = "0.8.3"
+float-cmp = "0.10.0"
+rand = "0.10.0"
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+
+# Allow casts that truncate, wrap, or lose precision.
+cast_possible_truncation = "allow"
+cast_possible_wrap = "allow"
+cast_precision_loss = "allow"
+cast_sign_loss = "allow"
+
+# Allow not having to write # Panics or # Errors sections.
+missing_panics_doc = "allow"
+missing_errors_doc = "allow"
+
+# Allow not writing `#[must_use]` on functions that return a value. 
+must_use_candidate = "allow"
+
+# Allow long functions.
+too_many_lines = "allow"
+
+# Warns if you pass `self` by value when it could be a reference.
+# Often conflicts with traits or async code where passing by value is intentional.
+needless_pass_by_value = "allow"
+
+# Allow `_`, `::`, and `camelCase` without backticks since this lint has false-positives.
+doc_markdown = "allow"
